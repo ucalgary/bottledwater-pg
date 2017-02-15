@@ -41,6 +41,31 @@ RUN BUILD_DIR="$(mktemp -d)" && \
     apk del .fetch-deps .build-deps && \
     rm -rf $BUILD_DIR
 
+# Build and install bottledwater extension
+COPY . /tmp/bottledwater/
+RUN apk add --no-cache --virtual .build-deps \
+      build-base \
+      snappy-dev \
+      zlib-dev && \
+    echo -e "Libs: -L/usr/lib -lsnappy\nCflags: -I/usr/include" >> /usr/lib/pkgconfig/libsnappy.pc && \
+    cd /tmp/bottledwater && \
+    make && \
+    make install && \
+\
+    runDeps="$( \
+      scanelf --needed --nobanner --recursive /usr/local \
+        | awk '{ gsub(/,/, "\nso:", $2); print "so:" $2 }' \
+        | sort -u \
+        | xargs -r apk info --installed \
+        | sort -u \
+      )" && \
+    apk add --no-cache --virtual .bottledwater-rundeps \
+      $runDeps \
+      snappy && \
+\
+    apk del .build-deps && \
+    rm -rf /tmp/bottledwater
+
 LABEL maintainer="King Chung Huang <kchuang@ucalgary.ca>" \
       org.label-schema.schema-version="1.0" \
       org.label-schema.name="PostgreSQL with bottledwater extension" \
