@@ -23,7 +23,7 @@ services:
     environment:
       SCHEMA_REGISTRY_AVRO_COMPATIBILITY_LEVEL: none
   postgres:
-    hostname: postgres
+    hostname: ucalgary/postgres-bw:latest
     ports:
       - '54095:5432'
   bottledwater:
