@@ -3,7 +3,6 @@
 .git
 .gitignore
 .ruby-version
-build
 Dockerfile
 Gemfile*
 LICENSE
