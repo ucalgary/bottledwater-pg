@@ -40,22 +40,6 @@ bottledwater:
     BOTTLED_WATER_TOPIC_PREFIX:
     VALGRIND_ENABLED:
     VALGRIND_OPTS:
-bottledwater-json:
-  extends: {service: bottledwater}
-  links:
-    - postgres
-    - postgres-94
-    - kafka
-  environment:
-    BOTTLED_WATER_OUTPUT_FORMAT: json
-bottledwater-avro:
-  extends: {service: bottledwater}
-  links:
-    - postgres
-    - postgres-94
-    - kafka
-    - schema-registry
-  environment:
     BOTTLED_WATER_OUTPUT_FORMAT: avro
 kafka-console-consumer:
   image: confluent/tools:0.9.0.0-cp1
