@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
   zookeeper:
-    image: confluent/zookeeper:3.4.6-cp1
+    image: zookeeper:3.4.9
     hostname: zookeeper
     ports:
       - '2181:2181'
