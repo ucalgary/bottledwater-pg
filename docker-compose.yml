@@ -27,7 +27,7 @@ services:
     ports:
       - '54095:5432'
   bottledwater:
-    hostname: bottledwater
+    hostname: ucalgary/bottledwater:latest
     entrypoint:
       - /usr/local/bin/bottledwater-docker-wrapper.sh
       - --topic-config=message.timeout.ms=2000
