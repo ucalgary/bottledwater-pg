@@ -106,6 +106,7 @@ RUN apk add --no-cache --virtual .build-deps \
       )" && \
     apk add --no-cache --virtual .bottledwater-rundeps \
       $runDeps \
+      bash \
       snappy && \
 \
     mv build/bottledwater-docker-wrapper.sh /usr/local/bin/ && \
