@@ -1000,9 +1000,9 @@ client_context_t init_client() {
     client->repl.slot_name = strdup(DEFAULT_REPLICATION_SLOT);
     client->repl.output_plugin = strdup(OUTPUT_PLUGIN);
     client->repl.frame_reader = frame_reader;
-    client->repl.schema_pattern = strdup(DEFAULT_SCHEMA);
-    client->repl.table_pattern = strdup(DEFAULT_TABLE);
-    client->repl.table_ids = strdup(DEFAULT_TABLE);
+    client->repl.schema_pattern = strdup(DEFAULT_SCHEMA_PATTERN);
+    client->repl.table_pattern = strdup(DEFAULT_TABLE_PATTERN);
+    client->repl.table_ids = strdup(DEFAULT_TABLE_PATTERN);
     return client;
 }
 
