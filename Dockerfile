@@ -115,7 +115,6 @@ RUN apk add --no-cache --virtual .build-deps \
     rm -rf /tmp/bottledwater
 
 ENTRYPOINT ["/usr/local/bin/bottledwater-docker-wrapper.sh"]
-CMD ["--output-format=avro", "--allow-unkeyed"]
 
 LABEL maintainer="King Chung Huang <kchuang@ucalgary.ca>" \
 	  org.label-schema.schema-version="1.0" \
