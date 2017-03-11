@@ -495,7 +495,8 @@ engine for Spark.
 License
 -------
 
-Copyright 2015 Confluent, Inc.
+Original work Copyright 2015 Confluent, Inc.
+Modified work Copyright 2017 University of Calgary
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
 software except in compliance with the License in the enclosed file called
