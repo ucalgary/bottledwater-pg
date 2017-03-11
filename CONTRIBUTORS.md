@@ -20,6 +20,8 @@ page](https://github.com/confluentinc/bottledwater-pg/graphs/contributors).
     * documented required dependency versions
 * [juliaaano](https://github.com/juliaaano)
     * build fixes
+* [kinghuang](https://github.com/kinghuang)
+    * Docker updates
 * [mcapitanio](https://github.com/mcapitanio)
     * include Postgres schema name in Kafka topic name
 * [samstokes](https://github.com/samstokes) (sponsored by [Heroku, a Salesforce
